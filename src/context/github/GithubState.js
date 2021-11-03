@@ -13,9 +13,8 @@ import {
 let githubToken;
 if (process.env.NODE_ENV !== "production") {
   githubToken = process.env.REACT_APP_AUTH_TOKEN;
-}else{
+} else {
   githubToken = process.env.GITHUB_AUTH_TOKEN;
-
 }
 
 const GithubState = (props) => {
@@ -44,7 +43,7 @@ const GithubState = (props) => {
 
   //Get User
   const getSingleUser = async (username) => {
-    setLoading(true);
+    setLoading();
     const response = await axios.get(
       `https://api.github.com/users/${username}`,
       {
@@ -54,7 +53,6 @@ const GithubState = (props) => {
       }
     );
     dispatch({ type: GET_USER, payload: response.data });
-    setLoading(false);
   };
 
   //Get Repos
@@ -69,7 +67,6 @@ const GithubState = (props) => {
       }
     );
     dispatch({ type: GET_REPOS, payload: response.data });
-    setLoading(false);
   };
 
   //Clear Users
