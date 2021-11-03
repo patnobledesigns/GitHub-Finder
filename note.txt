@@ -1,0 +1,5 @@
+rce --- Class basiced component
+rcep --- Class basiced component with PropType
+rafce --- Arrow functional component 
+rafcep --- Arrow functional component with PropType
+ptar --- Array Protype
